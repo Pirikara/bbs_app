@@ -6,10 +6,40 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="body">
+      <header>
+        <h1><a href="/">OPENBBS</a></h1>
+        <span class="menu-control-open" id="menuControlOpen">
+          <svg width="10" height="15">
+              <circle r="3" cx="5" cy="5"></circle>
+              <line x1="5" x2="5" y1="7" y2="13"></line>
+          </svg>
+          Menu
+        </span>
+        <div class="menu">
+            <div class="menu-inner">
+              <span class="menu-control-close" id="menuControlClose">Close</span>
+              <nav>
+                <% if user_signed_in? %>
+                  <a href="#">MYPAGE</a>
+                  <a href="#">CREATE ROOM</a>
+                  <a href="#">SIGN OUT</a>
+                <% else %>
+                  <a href="#">SIGN IN</a>
+                  <a href="#">SIGN UP</a>
+                <% end %>
+              </nav>
+            </div>
+        </div>
+      </header>
+      <%= yield %>
+      <div class="thread-create__link">
+      </div>
+    </div>
   </body>
 </html>

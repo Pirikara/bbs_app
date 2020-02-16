@@ -1,0 +1,322 @@
+// Place all the styles related to the Threads controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 検索部とスライドショー部
+.top-content{
+  padding-top: 120px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+// 検索部
+.search-form{
+  width: 100%;
+  position: relative;
+  &__input{
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    height: 45px;
+    width: 100%;
+    padding: 10px 45px 10px 10px;
+  }
+  .search-submit__label{
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    right: 0px;
+    border-radius: 4px;
+    i{
+      color: #837D7C;
+      line-height: 45px;
+      &:hover{
+        color: #373737;
+      }
+    }
+    .search-btn{
+      display: none;
+    }
+  }
+}
+
+// スライドショー部
+.slide-image-lists{
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  &--list{
+    display: block;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 5px;
+    animation: slideAnime 12s ease infinite;
+    &:nth-of-type(1){
+      animation-delay: 0s
+    }
+    &:nth-of-type(2){
+      animation-delay: 4s
+    }
+    &:nth-of-type(3){
+      animation-delay: 8s
+    }
+  }
+}
+
+@keyframes slideAnime{
+  0% { left: 100%  }
+  5% { left: 0     }
+ 28% { left: 0     }
+ 33% { left: -100% }
+100% { left: -100% }
+}
+
+.slide-message{
+  color: #ffffff;
+  h2{
+    text-align: left;
+    margin: 20px 20px;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  p{
+    text-align: left;
+    margin: 10px 20px;
+  }
+}
+
+.slide-container{
+  display: flex;
+}
+
+.slide-icon{
+  margin: 0 0 0 auto;
+  padding: 10px 20px;
+  img{
+    height: 80px;
+  }
+}
+
+//ピックアップ部とカテゴリー部
+.middle-content{
+  width: 80%;
+  margin: 0 auto;
+}
+//ピックアップ部
+.pickup-menu{
+  margin-top: 40px;
+  width: 100%;
+  h2{
+    font-size: 25px;
+  }
+  &--lists{
+    margin-top: 20px;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    &__list{
+      margin-right: 15px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.list-header{
+  position: relative;
+  &__image{
+    height: 150px;
+    img{
+      object-fit: cover;
+      height: 150px;
+      width: 340px;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+  &__title{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    h2{
+      font-weight: 800;
+      color: #ffffff;
+    }
+    p{
+      margin-top: 10px;
+      color: #ffffff;
+    }
+  }
+}
+
+.list-content{
+  border-radius: 0 0 8px 8px;
+  border: 2px solid #efefef;
+  &__thread{
+    margin: 20px 10px;
+  }
+}
+
+.thread-container{
+  display: flex;
+  &--icon{
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  &--message{
+    margin: 10px 0 0 15px;
+    &__title{
+
+    }
+  }
+}
+
+//カテゴリー部
+.category-menu{
+  margin-top: 40px;
+  width: 100%;
+  h2{
+    font-size: 25px;
+  }
+  &--lists{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__list{
+      box-sizing: border-box;
+      flex-basis: 49%;
+      margin-bottom: 20px;
+      border: 2px solid #efefef;
+      border-radius: 8px;
+      display: flex;
+      cursor: pointer;
+      &:hover{
+        border: 4px solid #efefef;
+      }
+      &__icon{
+        font-size: 35px;
+        line-height: 80px;
+        padding-left: 10px;
+      }
+      &__title{
+        font-size: 14px;
+        line-height: 80px;
+        padding-left: 20px;
+
+      }
+    }
+  }
+}
+
+//フッター
+footer{
+  padding: 40px;
+}
+
+.pagetop-btn{
+  width: 90px;
+  margin: 0 auto;
+}
+
+#page_top{
+  width: 90px;
+  height: 90px;
+  opacity: 0.6;
+  a{
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    text-decoration: none; 
+    &:before{
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f102';
+      font-size: 25px;
+      color: #837D7C;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -40px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;     
+    }   
+    &:after{
+      content: 'PAGE TOP';
+      font-size: 13px;
+      position: absolute;
+      top: 45px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+      color: #837D7C;      
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  // 検索部とスライドショー部
+  .top-content{
+    padding-top: 120px;
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .slide-message{
+    color: #ffffff;
+    h2{
+      text-align: left;
+      margin: 20px 20px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    p{
+      font-size: 12px;
+      text-align: left;
+      margin: 10px 20px;
+    }
+  }
+
+  //ピックアップ部とカテゴリー部
+  .middle-content{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  //カテゴリー部
+  .category-menu{
+    &--lists{
+      &__list{
+        margin-bottom: 7px;
+        &__icon{
+          font-size: 25px;
+          line-height: 80px;
+          padding-left: 10px;
+        }
+        &__title{
+          font-size: 12px;
+          line-height: 80px;
+          padding-left: 20px;
+  
+        }
+      }
+    }
+  }
+}
