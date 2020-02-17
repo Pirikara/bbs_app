@@ -1,0 +1,36 @@
+<div class="room_wrapper">
+  <div class="room-title">
+    <h2>NEW OPENBBS</h2>
+  </div>
+  <div class="room-form">
+    <%= form_with(model: @room, local: true) do |f| %>
+      <div class="room-form__image field">
+        <label for="room_image" class="room-form__image__label">
+          <%= image_tag 'default.jpg' %>
+          <i class="fas fa-camera"></i>
+          <%= f.file_field :image, required: "required"%>
+        </label>
+      </div>
+      <div class="room-form__title field">
+        <%= f.text_field :title, required: "required", placeholder: "タイトルを入力" %>
+      </div>
+      <div class="room-form__description field">
+        <%= f.text_area :description, required: "required", placeholder: "説明文を入力"%>
+      </div>
+      <div class="category__checkbox">
+        <h2>カテゴリー</h2>
+      </div>
+      <div class="room-form__category field">
+        <%= f.collection_check_boxes :category_id, Category.all, :id, :name, include_blank: '----', required: "required" %>
+      </div>
+      <div class="room-form__submit actions">
+        <%= f.submit 'NEW ROOM', class: "send-btn" %>
+      </div>
+    <% end %>
+  </div>
+  <footer>
+    <div class="pagetop-btn">
+      <div id="page_top"><a href="#"></a></div>
+    </div>
+  </footer>
+</div>

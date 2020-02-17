@@ -1,0 +1,88 @@
+.room_wrapper{
+  padding-top: 120px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.room-title{
+  margin-bottom: 40px;
+  h2{
+    font-size: 30px;
+  }
+}
+
+.room-form{
+  &__image{
+    input{
+      border-bottom: none !important;
+      display: none;
+    }
+    &__label{
+      position: relative;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      cursor: pointer;
+      img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      i{
+        color: #837D7C;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1px solid #837D7C;
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+      }
+    }
+  }
+  &__title{
+
+  }
+  &__description{
+    textarea{
+      width: 70%;
+      padding: 10px;
+    }
+  }
+  &__category{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 20px auto !important;
+    input{
+      width: 40% !important;
+    }
+    label{
+      width: 60% !important;
+      margin: 10px 0;
+    }
+  }
+}
+
+.category__checkbox{
+  margin-top: 30px;
+  h2{
+    font-size: 18px;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .room-form{
+    &__description{
+      textarea{
+        width: 90%;
+      }
+    }
+    &__category{
+      width: 90%;
+    }
+  } 
+}

@@ -3,18 +3,18 @@ $(function() {
   $('.send-btn').prop("disabled", true);
   
   //始めにjQueryで必須欄を加工する
-  $('form input:required').each(function () {
+  $('form input:required, form textarea:required').each(function () {
       $(this).prev("label").addClass("required");
   });
-  
+
   //入力欄の操作時
-  $('form input:required').change(function () {
+  $('form input:required, form textarea:required').change(function () {
       //必須項目が空かどうかフラグ
       let flag = true;
       //必須項目をひとつずつチェック
-      $('form input:required').each(function(e) {
+      $('form input:required, form textarea:required').each(function(e) {
           //もし必須項目が空なら
-          if ($('form input:required').eq(e).val() === "") {
+          if ($('form input:required, form textarea:required').eq(e).val() === "") {
               flag = false;
           }
       });
