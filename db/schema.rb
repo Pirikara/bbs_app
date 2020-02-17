@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_170904) do
+ActiveRecord::Schema.define(version: 2020_02_17_181319) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "room_category_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_room_category_relations_on_category_id"
+    t.index ["room_id"], name: "index_room_category_relations_on_room_id"
+  end
 
   create_table "room_user_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "room_id"
@@ -46,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_02_17_170904) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "room_category_relations", "categories"
+  add_foreign_key "room_category_relations", "rooms"
   add_foreign_key "room_user_relations", "rooms"
   add_foreign_key "room_user_relations", "users"
   add_foreign_key "rooms", "users", column: "host_id"
