@@ -27,7 +27,7 @@
               <nav>
                 <% if user_signed_in? %>
                   <a href="#">MYPAGE</a>
-                  <a href="#">CREATE THREAD</a>
+                  <%= link_to 'CREATE ROOM', new_room_path %>
                   <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
                 <% else %>
                   <%= link_to 'SIGN IN', new_user_session_path %>
