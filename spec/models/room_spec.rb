@@ -24,13 +24,13 @@ describe Room do
     it "カテゴリがないと登録できない" do
       room = build(:room, category_id: "")
       room.valid?
-      expect(room.errors[:title]).to include("を入力してください")
+      expect(room.errors[:category_id]).to include("を入力してください")
     end
 
     it "ホストユーザーがないと登録できない" do
       room = build(:room, host_id: "")
       room.valid?
-      expect(room.errors[:title]).to include("を入力してください")
+      expect(room.errors[:host_id]).to include("を入力してください")
     end
   end
 end

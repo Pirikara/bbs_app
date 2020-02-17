@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ThreadsController, type: :controller do
+RSpec.describe RoomsController, type: :controller do
 
 end
