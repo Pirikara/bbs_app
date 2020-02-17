@@ -13,7 +13,7 @@
   <body>
     <div id="body">
       <header>
-        <h1><a href="/">OPENBBS</a></h1>
+        <h1><%= link_to 'OPENBBS', root_path%></h1>
         <span class="menu-control-open" id="menuControlOpen">
           <svg width="10" height="15">
               <circle r="3" cx="5" cy="5"></circle>
@@ -30,8 +30,8 @@
                   <a href="#">CREATE ROOM</a>
                   <a href="#">SIGN OUT</a>
                 <% else %>
-                  <a href="#">SIGN IN</a>
-                  <a href="#">SIGN UP</a>
+                  <%= link_to 'SIGN IN', new_user_session_path %>
+                  <%= link_to 'SIGN UP', new_user_registration_path%>
                 <% end %>
               </nav>
             </div>
