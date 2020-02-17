@@ -30,7 +30,6 @@ $(function() {
           $('.send-btn').prop("disabled", true);
 
           $('.send-btn').css({'background-color':'#837D7C', 'border':'1px solid #837D7C' })
-
       }
   });
 });
