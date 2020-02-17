@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # association
+  has_many :room_user_relations
+  has_many :rooms, through: :room_user_relations
+
   #validation
   validates :name,
             :email, presence: true

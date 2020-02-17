@@ -67,8 +67,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# ユーザー管理
 gem 'devise'
+
+# JQueryの導入
 gem 'jquery-rails'
 
 # エラーメッセージの日本語対応
 gem 'rails-i18n'
+
+# 画像投稿
+gem 'carrierwave'
+gem 'mini_magick'
