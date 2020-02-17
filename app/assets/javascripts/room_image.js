@@ -1,6 +1,5 @@
 $(function(){
   $(document).on('change', '#room_image', function(){
-    console.log('success')
     var file = $('input[type="file"]').prop('files')[0];
     var fileReader = new FileReader();
 

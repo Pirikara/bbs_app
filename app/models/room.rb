@@ -7,9 +7,8 @@ class Room < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   # validation
-  validates :image,
-            :title,
+  validates :title,
             :description,
-            :category_id,
+            :category_ids,
             :host_id, presence: true
 end

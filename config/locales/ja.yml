@@ -4,3 +4,7 @@ ja:
     email: メールアドレス
     password: パスワード
     password_confirmation: パスワード (確認)
+    image: 画像
+    category: カテゴリー
+    description: 説明
+    title: タイトル
