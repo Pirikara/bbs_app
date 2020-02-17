@@ -11,11 +11,11 @@ jobs:
         MYSQL_PORT: '4306:3306'
     - image: circleci/mysql:5.7-ram
       environment:
-        MYSQL_DATABASE: app_name_test
+        MYSQL_DATABASE: bbs_app_test
         MYSQL_ALLOW_EMPTY_PASSWORD: true
         MYSQL_ROOT_HOST: '%'
 
-    working_directory: ~/app_name
+    working_directory: ~/bbs_app
     steps:
     - checkout
     - restore_cache:
