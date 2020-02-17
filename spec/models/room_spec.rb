@@ -21,7 +21,7 @@ describe Room do
       expect(room.errors[:description]).to include("を入力してください")
     end
 
-    it "カテゴリがないと登録できない" do
+    it "カテゴリが入力されていないと登録できない" do
       room = build(:room, category_id: "")
       room.valid?
       expect(room.errors[:category_id]).to include("を入力してください")
