@@ -6,10 +6,10 @@ RUN apt-get update -qq && \
                        libpq-dev \        
                        nodejs           
 #作業ディレクトリの作成
-RUN mkdir /app_name 
+RUN mkdir /bbs_app
 
 #作業ディレクトリをAPP_ROOTに割り当てる
-ENV APP_ROOT /app_name 
+ENV APP_ROOT /bbs_app 
 WORKDIR $APP_ROOT
 
 #ローカルのGemfileを追加
