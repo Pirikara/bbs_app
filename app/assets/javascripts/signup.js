@@ -1,4 +1,5 @@
 $(function() {
+
   //始めにjQueryで送信ボタンを無効化する
   $('.send-btn').prop("disabled", true);
   

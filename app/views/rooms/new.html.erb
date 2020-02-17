@@ -13,15 +13,18 @@
       </div>
       <div class="room-form__title field">
         <%= f.text_field :title, required: "required", placeholder: "タイトルを入力" %>
+        <%= render partial: "/shared/error", locals: { key: :title} %>
       </div>
       <div class="room-form__description field">
         <%= f.text_area :description, required: "required", placeholder: "説明文を入力"%>
+        <%= render partial: "/shared/error", locals: { key: :description} %>
       </div>
       <div class="category__checkbox">
         <h2>カテゴリー</h2>
       </div>
+      <%= render partial: "/shared/error", locals: { key: :category_ids } %>
       <div class="room-form__category field">
-        <%= f.collection_check_boxes :category_id, Category.all, :id, :name, include_blank: '----', required: "required" %>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, required: "required", include_hidden: false %>
       </div>
       <div class="room-form__submit actions">
         <%= f.submit 'NEW ROOM', class: "send-btn" %>
