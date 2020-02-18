@@ -6,6 +6,41 @@
     </div>
   </div>
   <div class="room-show__main">
+    <% if @messages %>  
+      <% @messages.each do |message| %>
+        <% if message.user == current_user %>
+          <div class="message-container my-container">
+            <div class="message-content">
+              <%= simple_format(message.content) %>
+              <div class="message-time my-time">
+                <i class="far fa-clock"></i>
+                <%= time_ago_in_words(message.created_at) %>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="message-container">
+            <div class="message-user">
+              <div class="message-user__icon">
+                <%= image_tag 'default.jpg' %>
+              </div>
+              <div class="message-user__name">
+                <%= message.user.name %>
+              </div>
+            </div>
+            <div class="message-content">
+              <div class="message-content__says">
+                <%= simple_format(message.content) %>
+                <div class="message-time">
+                  <i class="far fa-clock"></i>
+                  <%= time_ago_in_words(message.created_at) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
   <div class="room-show__form">
     <%= form_with(model: [@room, @message], class: "message_form", local: true, id: "new_message", method: :post) do |f| %>
