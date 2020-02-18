@@ -47,6 +47,13 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    if @room.destroy
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to user_path(current_user.id)
+      :javascript
+        alert('削除できませんでした。');
+    end
   end
 
   def search
