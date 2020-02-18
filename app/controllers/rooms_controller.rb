@@ -15,6 +15,8 @@ class RoomsController < ApplicationController
     @room.host_id = current_user.id
 
     if @room.save
+      # 初回メッセージの自動投稿
+      Message.create(room_id: @room.id, user_id: current_user.id, content: "＊自動投稿＊ 「#{@room.title}」を作成しました")
       redirect_to room_path(@room.id)
     else
       @errors = @room.errors.keys.map { |key|[key, @room.errors.full_messages_for(key)]}.to_h
@@ -35,6 +37,10 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search
+    @rooms = Room.search(params[:keyword])
   end
 
   private

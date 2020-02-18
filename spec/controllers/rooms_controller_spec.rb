@@ -21,5 +21,4 @@ describe RoomsController, type: :controller do
       end
     end
   end
-
 end

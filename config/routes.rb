@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :rooms do
     resources :messages, only: [:create]
+    collection do
+      get 'search'
+    end
   end
 end
