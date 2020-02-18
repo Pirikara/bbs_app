@@ -34,8 +34,8 @@ jobs:
         key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
     # Database setup
-    - run: rm ./config/database.yml
     - run: mv ./config/database.yml.ci ./config/database.yml
+
     # Database setup
     - run: bundle exec rake db:create
     - run: bundle exec rake db:schema:load
