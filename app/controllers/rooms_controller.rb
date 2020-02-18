@@ -24,6 +24,8 @@ class RoomsController < ApplicationController
 
   def show
     @message = Message.new
+    #@roomにひもづくメッセージとそのユーザーを取得
+    @messages = @room.messages.includes(:user)
   end
 
   def edit

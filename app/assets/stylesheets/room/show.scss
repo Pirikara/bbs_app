@@ -1,7 +1,9 @@
+// 全体
 .room-show__wrapper{
   padding-top: 80px;
 }
 
+// ルームのヘッダー部分
 .room-show__header{
   position: relative;
   img{
@@ -24,10 +26,102 @@
   }
 }
 
+// メッセージ一覧部分
 .room-show__main{
-  height: 1000px;
+  margin-top: 10px;
+  height: 100vh;
+  overflow: scroll;
 }
 
+// 相手のメッセージ
+.message-container{
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+  .message-content{
+    width: 100%;
+    text-align: left;
+    &__says{
+      display: inline-block;
+      position: relative;
+      margin: 0 0 0 50px;
+      padding: 10px;
+      max-width: 250px;
+      border-radius: 12px;
+      background: #edf1ee;
+      &:after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 3px; 
+        left: -19px;
+        border: 8px solid transparent;
+        border-right: 18px solid #edf1ee;
+        -webkit-transform: rotate(35deg);
+        transform: rotate(35deg);
+      }
+    }
+  }
+}
+
+.message-user{
+  display: flex;
+  margin: 10px 10px 0 10px;
+  position: relative;
+  &__icon{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__name{
+
+  }
+}
+
+// 自分のメッセージ
+.my-container{
+  width: 100%;
+  text-align: right;
+  margin: 15px -15px;
+  .message-content{
+    display: inline-block;
+    position: relative; 
+    margin: 0 10px 0 0;
+    padding: 10px;
+    max-width: 85%;
+    border-radius: 12px;
+    background: #C0E8E2;
+    font-size: 16px;
+    &:after{
+      content: "";
+      position: absolute;
+      top: 3px; 
+      right: -19px;
+      border: 8px solid transparent;
+      border-left: 18px solid #C0E8E2;
+      -webkit-transform: rotate(-35deg);
+      transform: rotate(-35deg);
+    }
+  }
+}
+
+// タイムゾーン
+.message-time{
+  font-size: 12px;
+  color: #838383;
+  margin-top: 15px;
+}
+
+.my-time{
+  text-align: right;
+}
+
+// 送信フォーム部分
 .room-show__form{
   padding: 30px;
   width: 100%;
@@ -39,7 +133,7 @@
     border: 1px solid #efefef;
     border-radius: 20px;
     padding: 10px;
-    width: 80vh;
+    width: 90%;
     height: 50px;
   }
   .message_send{
@@ -48,10 +142,6 @@
       color: #4288C6;
       font-size: 30px;
       cursor: pointer;
-      &:hover{
-
-      }
-
     }
     &__btn{
       display: none;
