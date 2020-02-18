@@ -1,4 +1,7 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :destroy]
+
   def index
   end
 
@@ -20,6 +23,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -41,4 +45,9 @@ class RoomsController < ApplicationController
       category_ids:[]
     )
   end
+
+  def set_room
+    @room = Room.find(params[:id])
+  end
+
 end

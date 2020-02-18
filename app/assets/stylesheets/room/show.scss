@@ -1,0 +1,70 @@
+.room-show__wrapper{
+  padding-top: 80px;
+}
+
+.room-show__header{
+  position: relative;
+  img{
+    height: 90px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.room-show__title{
+  padding: 20px;
+  position: absolute;
+  top: 15px;
+  z-index: 10;
+  h2{
+    font-size: 25px;
+    font-weight: 800;
+    margin-left: 10px;
+    color: #ffffff;
+  }
+}
+
+.room-show__main{
+  height: 1000px;
+}
+
+.room-show__form{
+  padding: 30px;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  .message_input{
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    border-radius: 20px;
+    padding: 10px;
+    width: 80vh;
+    height: 50px;
+  }
+  .message_send{
+    i{
+      padding: 10px;
+      color: #4288C6;
+      font-size: 30px;
+      cursor: pointer;
+      &:hover{
+
+      }
+
+    }
+    &__btn{
+      display: none;
+    }
+  }
+}
+
+.message_form{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px){
+  .room-show__wrapper{
+  }
+}

@@ -44,6 +44,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'pry-rails'
   gem 'rspec_junit_formatter'
+  # rspec実行時にDBをリセットする
+  gem 'database_cleaner'
 end
 
 group :development do
