@@ -13,6 +13,7 @@ describe RoomsController, type: :controller do
         expect(response).to render_template :new
       end
     end
+
     context 'ログインしていない場合' do
       it 'トップページにリダイレクトされる' do
         get :new

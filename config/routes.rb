@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: 'rooms#index'
 
   resources :users, only: [:show]
+  resources :categories, only: [:show]
   resources :rooms do
     resources :messages, only: [:create]
   end

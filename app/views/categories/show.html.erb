@@ -1,0 +1,46 @@
+<div class="category-wrapper top-content">
+  <div class="category-header">
+    <h2>CATEGORY</h2>
+  </div>
+  <div class="category-nav">
+    <% @categories.each do |c| %>
+      <%= link_to category_path(c.id), class:"nav-container" do%>
+        <% if c.id == @category.id %>
+          <div class="nav-content nav-content-now">
+            <%= c.name.truncate(20) %>
+          </div>
+        <% else %>
+         <div class="nav-content">
+            <%= c.name.truncate(20) %>
+          </div>
+        <% end %>
+      <%end%>
+    <% end %>
+  </div>
+  <div class="category-rooms">
+    <div class="category-lists">
+      <% @rooms.each do |r| %>
+        <%= link_to room_path(r.id), class: "category-list" do %>
+          <div class="category-list__icon">
+            <%= image_tag "#{r.image}"%>
+          </div>
+          <div class="category-list__info">
+            <div class="category-list__info--title">
+              <%= r.title.truncate(15) %>
+            </div>
+            <div class="category-list__info--description">
+              <%= r.description.truncate(18) %>
+            </div>
+            <div class="room-message-info">
+              <div class="room-message-info__count">
+                メッセージ数：<%= r.messages.count %>
+              </div>
+              <div class="room-message-info__latest">
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

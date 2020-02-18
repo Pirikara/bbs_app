@@ -1,0 +1,106 @@
+.category-header{
+  h2{
+    font-size: 30px;
+  }
+}
+
+.category-nav{
+  margin: 10px 0;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-container{
+  margin: 10px;
+  text-decoration: none;
+  .nav-content{
+    padding: 10px;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    color: #383838;
+  }
+  .nav-content-now{
+    background-color: #383838;
+    color: #ffffff;
+  }
+}
+
+.category-rooms{
+
+}
+
+.category-lists{
+
+}
+
+.category-list{
+  display: flex;
+  text-decoration: none;
+  &__icon{
+    margin: 10px;
+    img{
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+  }
+  &__info{
+    margin: 20px 10px;
+    color: #383838;
+    &--title{
+      font-size: 16px;
+      font-weight: 800;
+      text-align: left;
+    }
+    &--description{
+      margin: 10px 0;
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+}
+
+.room-message-info{
+  display: flex;
+  &__count{
+    text-align: left;
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+  &__latest{
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .category-list{
+    &__icon{
+      img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    &__info{
+      margin: 10px;
+      &--title{
+        font-size: 14px;
+        font-weight: 800;
+      }
+      &--description{
+        margin: 8px 0;
+        font-size: 12px;
+      }
+    }
+  }
+  .room-message-info{
+    &__count{
+      font-size: 12px;
+    }
+    &__latest{
+  
+    }
+  }
+}

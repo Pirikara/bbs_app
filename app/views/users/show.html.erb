@@ -16,10 +16,10 @@
             </div>
             <div class="room-list-container__info">
               <div class="room-list-container__info--title">
-                <%= r.title %>
+                <%= r.title.truncate(13) %>
               </div>
               <div class="room-list-container__info--description">
-                <%= r.description %>
+                <%= r.description.truncate(15) %>
               </div>
             </div>
           <% end %>
@@ -39,10 +39,10 @@
             </div>
             <div class="room-list-container__info">
               <div class="room-list-container__info--title">
-                <%= r.title %>
+                <%= r.title.truncate(13) %>
               </div>
               <div class="room-list-container__info--description">
-                <%= r.description %>
+                <%= r.description.truncate(15) %>
               </div>
             </div>
           </div>
