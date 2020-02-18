@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # association
-  has_many :room_user_relations
-  has_many :rooms, through: :room_user_relations
+  # has_many :room_user_relations
+  # has_many :rooms, through: :room_user_relations, dependent: :destroy
+  has_many :host_rooms, foreign_key: "host_id", class_name: "Room", dependent: :destroy
   has_many :messages, dependent: :destroy
 
   #validation
