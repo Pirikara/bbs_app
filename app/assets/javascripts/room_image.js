@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+
   $(function(){
     $(document).on('change', '#room_image', function(){
       var file = $('input[type="file"]').prop('files')[0];
@@ -11,4 +11,3 @@ $(document).on('turbolinks:load', function(){
       fileReader.readAsDataURL(file);
     })
   })
-})
