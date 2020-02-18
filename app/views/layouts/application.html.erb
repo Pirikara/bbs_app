@@ -26,7 +26,7 @@
               <span class="menu-control-close" id="menuControlClose">Close</span>
               <nav>
                 <% if user_signed_in? %>
-                  <a href="#">MYPAGE</a>
+                  <%= link_to 'MYPAGE', user_path(current_user.id) %>
                   <%= link_to 'CREATE ROOM', new_room_path %>
                   <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
                 <% else %>
