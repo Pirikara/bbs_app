@@ -49,6 +49,14 @@
       cursor: not-allowed;
     }
   }
+  .send-btn-a{
+    width: 70%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #00afaf;
+    background-color: #00afaf;
+    color: #ffffff;
+  }
   margin: 40px 0;
 }
 
@@ -68,6 +76,9 @@
   }
   .actions{
     .send-btn{
+      width: 90%;
+    }
+    .send-btn-a{
       width: 90%;
     }
   }
