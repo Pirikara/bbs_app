@@ -4,7 +4,7 @@ describe RoomsController, type: :controller do
   let(:user) { create(:user) }
 
   describe 'GET #new' do
-    context 'log in' do
+    context 'ログインしている場合' do
       before do
         login user
       end
@@ -13,8 +13,8 @@ describe RoomsController, type: :controller do
         expect(response).to render_template :new
       end
     end
-    context 'not log in' do
-      it 'ログインしていない場合、トップページにリダイレクトされる' do
+    context 'ログインしていない場合' do
+      it 'トップページにリダイレクトされる' do
         get :new
         expect(response).to redirect_to(new_user_session_path)
       end
