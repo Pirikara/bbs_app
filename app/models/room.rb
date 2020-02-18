@@ -13,4 +13,11 @@ class Room < ApplicationRecord
             :description,
             :category_ids,
             :host_id, presence: true
+
+  # method
+  # キーワードを含むmessageが投稿されたroomを検索
+  def self.search(search)
+    return Room.all unless search
+    rooms = Room.eager_load(:messages).where('content LIKE(?)', "%#{search}%")
+  end
 end
