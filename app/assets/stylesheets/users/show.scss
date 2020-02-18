@@ -1,0 +1,55 @@
+.user-show__main{
+
+}
+
+.user-show__hostrooms{
+
+}
+
+.hostrooms__title{
+  margin: 20px 0;
+  h2{
+    font-weight: 800;
+  }
+}
+
+.rooms-lists{
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.room-list-container{
+  margin: 10px;
+  text-decoration: none;
+  &__image{
+    height: 150px;
+    width: 250px;
+    img{
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+  &__info{
+    margin: 5px;
+    color: #838383;
+    &--title{
+      margin: 5px;
+      font-size: 16px;
+    }
+    &--description{
+      margin: 5px;
+      font-size: 12px;
+    }
+  }
+}
+
+.account-links{
+  margin-top: 20px;
+}
+
+.account-info{
+  margin-top: 10px;
+}

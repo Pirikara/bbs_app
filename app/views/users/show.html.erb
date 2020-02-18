@@ -1,0 +1,69 @@
+<div class="room_wrapper">
+  <div class="room-title">
+    <h2>Hi, <%= @user.name%></h2>
+  </div>
+
+  <div class="user-show__main">
+    <div class="user-show__hostrooms">
+      <div class="hostrooms__title">
+        <h2>HOST ROOM</h2>
+      </div>
+      <div class="rooms-lists">
+        <% @host_rooms.each do |r| %>
+          <%= link_to room_path(r.id), class: "room-list-container" do%>
+            <div class="room-list-container__image">
+              <%= image_tag "#{r.image}" %>
+            </div>
+            <div class="room-list-container__info">
+              <div class="room-list-container__info--title">
+                <%= r.title %>
+              </div>
+              <div class="room-list-container__info--description">
+                <%= r.description %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-show__gestrooms">
+      <div class="hostrooms__title">
+        <h2>GEST ROOM</h2>
+      </div>
+      <div class="rooms-lists">
+        <% @gest_rooms.each do |r| %>
+          <div class="room-list-container">
+            <div class="room-list-container__image">
+              <%= image_tag "#{r.image}" %>
+            </div>
+            <div class="room-list-container__info">
+              <div class="room-list-container__info--title">
+                <%= r.title %>
+              </div>
+              <div class="room-list-container__info--description">
+                <%= r.description %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="account-links">
+    <div class="account-edit account-info">
+      <%= link_to "EDIT ACCOUNT", edit_user_registration_path %>
+    </div>
+    <div class="account-delete account-info">
+      <%= link_to "DELETE ACCOUNT", user_registration_path, method: :delete %>
+    </div>
+  </div>
+
+  <footer>
+    <div class="pagetop-btn">
+      <div id="page_top"><a href="#"></a></div>
+    </div>
+  </footer>
+</div>
