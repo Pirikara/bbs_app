@@ -63,28 +63,22 @@
           </div>
         </div>
         <div class="list-content">
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title">初心者さんいらっしゃい</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title">今日食べたもの自慢</div>
-              </div>
-            </div>
-          </div>
-
+          <%if @beginner %>
+            <% @beginner.each do |b| %>
+              <%= link_to room_path(b.id), class: "list-content__thread" do%>
+                <div class="thread-container">
+                  <div class="thread-container--icon">
+                    <%= image_tag "#{b.image}" %>
+                  </div>
+                  <div class="thread-container--message">
+                    <div class="thread-container--message__title">
+                      <%= b.title %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -99,27 +93,22 @@
           </div>
         </div>
         <div class="list-content">
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title">今日のニュース</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title">コロナウイルス拡散</div>
-              </div>
-            </div>
-          </div>
+          <%if @news %>
+            <% @news.each do |n| %>
+              <%= link_to room_path(n.id), class: "list-content__thread" do%>
+                <div class="thread-container">
+                  <div class="thread-container--icon">
+                    <%= image_tag "#{n.image}" %>
+                  </div>
+                  <div class="thread-container--message">
+                    <div class="thread-container--message__title">
+                      <%= n.title %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
 
         </div>
       </div>
@@ -135,28 +124,22 @@
           </div>
         </div>
         <div class="list-content">
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
+          <%if @hobby %>
+            <% @hobby.each do |h| %>
+              <%= link_to room_path(h.id), class: "list-content__thread" do%>
+                <div class="thread-container">
+                  <div class="thread-container--icon">
+                    <%= image_tag "#{h.image}" %>
+                  </div>
+                  <div class="thread-container--message">
+                    <div class="thread-container--message__title">
+                      <%= h.title %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -171,28 +154,22 @@
           </div>
         </div>
         <div class="list-content">
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
+          <%if @consultation %>
+            <% @consultation.each do |c| %>
+              <%= link_to room_path(c.id), class: "list-content__thread" do%>
+                <div class="thread-container">
+                  <div class="thread-container--icon">
+                    <%= image_tag "#{c.image}" %>
+                  </div>
+                  <div class="thread-container--message">
+                    <div class="thread-container--message__title">
+                      <%= c.title %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -203,32 +180,29 @@
           </div>
           <div class="list-header__title">
             <h2>癒し</h2>
-            <p>心を落ち着けよう</p></p>
+            <p>心を落ち着けよう</p>
           </div>
         </div>
         <div class="list-content">
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-content__thread">
-            <div class="thread-container">
-              <div class="thread-container--icon">
-                <%= image_tag 'default.jpg' %>
-              </div>
-              <div class="thread-container--message">
-                <div class="thread-container--message__title"></div>
-              </div>
-            </div>
-          </div>
-
+          <%if @healing %>
+            <% @healing.each do |h| %>
+              <%= link_to room_path(h.id), class: "list-content__thread" do%>
+                <div class="thread-container">
+                  <div class="thread-container--icon">
+                    <%= image_tag "#{h.image}" %>
+                  </div>
+                  <div class="thread-container--message">
+                    <div class="thread-container--message__title">
+                      <%= h.title.truncate(12) %>
+                    </div>
+                    <div class="thread-container--message__count">
+                      メッセージ数<%= h.messages.count %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 

@@ -21,5 +21,10 @@ module AppName
     #エラーメッセージの日本語化
     config.i18n.locale = :ja
     config.i18n.default_locale = :ja
+
+    # field_with_errorsのキャンセル
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      %Q(#{html_tag}).html_safe
+    end
   end
 end
