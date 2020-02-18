@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_room, only: [:show, :edit, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def index
     @beginner = Room.beginner.limit(5)
@@ -39,6 +39,11 @@ class RoomsController < ApplicationController
   end
 
   def update
+    if @room.update(room_update_params)
+      redirect_to room_path(@room.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -52,6 +57,15 @@ class RoomsController < ApplicationController
   private
 
   def room_params
+    params.require(:room).permit(
+      :image,
+      :title,
+      :description,
+      category_ids:[]
+    )
+  end
+
+  def room_update_params
     params.require(:room).permit(
       :image,
       :title,
