@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root to: 'rooms#index'
 
   resources :rooms
+  resources :messages, only: [:create]
 end
