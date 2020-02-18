@@ -3,6 +3,11 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :destroy]
 
   def index
+    @beginner = Room.beginner.limit(5)
+    @news = Room.news.limit(5)
+    @hobby = Room.hobby.limit(5)
+    @consultation = Room.consultation.limit(5)
+    @healing = Room.healing.limit(5)
   end
 
   def new

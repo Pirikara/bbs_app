@@ -159,11 +159,13 @@
   border-radius: 0 0 8px 8px;
   border: 2px solid #efefef;
   &__thread{
-    margin: 20px 10px;
+    text-decoration: none;
+    color: #373737;
   }
 }
 
 .thread-container{
+  padding: 10px;
   display: flex;
   &--icon{
     img{
@@ -176,6 +178,11 @@
     margin: 10px 0 0 15px;
     &__title{
 
+    }
+    &__count{
+      margin-top: 7px;
+      font-size: 14px;
+      color: #d3d3d3;
     }
   }
 }
