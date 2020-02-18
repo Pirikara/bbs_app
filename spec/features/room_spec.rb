@@ -17,7 +17,7 @@ feature 'room', type: :feature do
       attach_file "room[image]", "app/assets/images/default.jpg"
       fill_in 'room[title]', with: "テスト"
       fill_in 'room[description]', with: "テストです"
-      check 'room_category_ids_1'
+      check 'アニメ・漫画'
       find('.send-btn').click
     }.to change(Room, :count).by(1)
   end
