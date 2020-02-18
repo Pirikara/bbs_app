@@ -10,6 +10,7 @@
       </div>
       <div class="rooms-lists">
         <% @host_rooms.each do |r| %>
+          <%= link_to "DELETE", room_path(r.id), method: :delete, class: "delete-room-link" %>
           <%= link_to room_path(r.id), class: "room-list-container" do%>
             <div class="room-list-container__image">
               <%= image_tag "#{r.image}" %>

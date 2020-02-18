@@ -47,6 +47,7 @@
 
 // ルーム編集画面へのリンク
 .edit-room-link{
+  width: 65px;
   height: 150px;
   margin: 10px 15px 0 -10px;
   padding: 5px;
@@ -54,6 +55,16 @@
   color: #ffffff;
   line-height: 150px;
   background-color: #838383;
+}
+.delete-room-link{
+  width: 65px;
+  height: 150px;
+  margin: 10px -10px 0 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 150px;
+  background-color: #838383; 
 }
 
 .account-links{

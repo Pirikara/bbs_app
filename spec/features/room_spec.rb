@@ -63,15 +63,14 @@ feature 'room', type: :feature do
       find('.send-btn').click
     }.to change(Room, :count).by(1)  
     
-    expect {
-      click_link('MYPAGE')
-      expect(current_path).to eq user_path(user.id)
-      click_link('EDIT')
-      expect(page).to have_content('EDIT OPENBBS')
-      fill_in 'room[title]', with: "AIUEO"
-      find('.send-btn').click
-      expect(page).to have_content('AIUEO')
-    }
+
+    click_link('MYPAGE')
+    expect(current_path).to eq user_path(user.id)
+    click_link('EDIT')
+    expect(page).to have_content('EDIT OPENBBS')
+    fill_in 'room[title]', with: "AIUEO"
+    find('.send-btn').click
+    expect(page).to have_content('AIUEO')
   end
 
 end
