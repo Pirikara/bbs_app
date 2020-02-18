@@ -1,0 +1,21 @@
+<div class="room-show__wrapper">
+  <div class="room-show__header">
+    <%= image_tag @room.image.url %>
+    <div class="room-show__title">
+      <h2><%= @room.title %></h2>
+    </div>
+  </div>
+  <div class="room-show__main">
+  </div>
+  <div class="room-show__form">
+    <form class="message_form">
+      <textarea type="text" class="message_input"></textarea>
+      <div class="message_send">
+        <label for="message-submit">
+          <i class="fas fa-paper-plane"></i>
+          <input type="submit" class="message_send__btn" id="message-submit">
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
