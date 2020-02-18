@@ -17,3 +17,5 @@ Category.create(name: "音楽")
 Category.create(name: "芸能人・有名人")
 Category.create(name: "料理・グルメ")
 Category.create(name: "政治・経済")
+
+User.create(name: "Angy", email: "a@example.com", password: "1111aaaa", password_confirmation: "1111aaaa")

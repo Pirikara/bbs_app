@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # association
   has_many :room_user_relations
   has_many :rooms, through: :room_user_relations
+  has_many :messages, dependent: :destroy
 
   #validation
   validates :name,

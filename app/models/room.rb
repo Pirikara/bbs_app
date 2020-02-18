@@ -4,6 +4,7 @@ class Room < ApplicationRecord
   has_many :users, through: :room_user_relations
   has_many :room_category_relations
   has_many :categories, through: :room_category_relations
+  has_many :messages, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   # validation
