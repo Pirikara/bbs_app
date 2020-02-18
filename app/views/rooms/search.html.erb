@@ -1,6 +1,34 @@
-
-<div class="top-content">
-  <% @rooms.each do |r| %>
-    <%= r.title%>
-  <% end %>
+<div class="category-wrapper top-content">
+  <div class="category-header">
+    <h2>SEARCH RESULT</h2>
+  </div>
+  <div class="search-words">
+    KEYWORD：<%= @keywords%>
+  </div>
+  <div class="category-rooms">
+    <div class="category-lists">
+      <% @rooms.each do |r| %>
+        <%= link_to room_path(r.id), class: "category-list" do %>
+          <div class="category-list__icon">
+            <%= image_tag "#{r.image}"%>
+          </div>
+          <div class="category-list__info">
+            <div class="category-list__info--title">
+              <%= r.title.truncate(15) %>
+            </div>
+            <div class="category-list__info--description">
+              <%= r.description.truncate(18) %>
+            </div>
+            <div class="room-message-info">
+              <div class="room-message-info__count">
+                メッセージ数：<%= r.messages.count %>
+              </div>
+              <div class="room-message-info__latest">
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
