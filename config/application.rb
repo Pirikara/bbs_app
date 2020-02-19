@@ -18,6 +18,7 @@ module AppName
 
     #タイムゾーンの変更
     config.time_zone = 'Tokyo'
+
     #エラーメッセージの日本語化
     config.i18n.locale = :ja
     config.i18n.default_locale = :ja
