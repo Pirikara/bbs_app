@@ -72,7 +72,10 @@
                   </div>
                   <div class="thread-container--message">
                     <div class="thread-container--message__title">
-                      <%= b.title %>
+                      <%= b.title.truncate(12) %>
+                    </div>
+                    <div class="thread-container--message__count">
+                      メッセージ数<%= h.messages.count %>
                     </div>
                   </div>
                 </div>
@@ -102,7 +105,10 @@
                   </div>
                   <div class="thread-container--message">
                     <div class="thread-container--message__title">
-                      <%= n.title %>
+                      <%= n.title.truncate(12) %>
+                    </div>
+                    <div class="thread-container--message__count">
+                      メッセージ数<%= h.messages.count %>
                     </div>
                   </div>
                 </div>
@@ -133,7 +139,10 @@
                   </div>
                   <div class="thread-container--message">
                     <div class="thread-container--message__title">
-                      <%= h.title %>
+                      <%= h.title.truncate(12) %>
+                    </div>
+                    <div class="thread-container--message__count">
+                      メッセージ数<%= h.messages.count %>
                     </div>
                   </div>
                 </div>
@@ -163,7 +172,10 @@
                   </div>
                   <div class="thread-container--message">
                     <div class="thread-container--message__title">
-                      <%= c.title %>
+                      <%= c.title.truncate(12) %>
+                    </div>
+                    <div class="thread-container--message__count">
+                      メッセージ数<%= h.messages.count %>
                     </div>
                   </div>
                 </div>
