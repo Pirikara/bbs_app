@@ -23,7 +23,7 @@ feature 'message', type: :feature do
 
     expect {
       fill_in 'message[content]', with: "テスト投稿"
-      find('#message-submit').click
+      find('#message-send').click
     }.to change(Message, :count).by(1)
   end
 end

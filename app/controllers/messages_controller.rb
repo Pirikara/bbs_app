@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
       redirect_to room_path(@room.id)
     else
       @messages = @room.messages.includes(:user)
-      redirect_to room_path(@room.id)
+      @errors = @message.errors.keys.map { |key|[key, @message.errors.full_messages_for(key)]}.to_h
+      render template: "rooms/show"
     end
   end
 
