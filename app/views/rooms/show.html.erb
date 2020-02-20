@@ -43,12 +43,15 @@
     <% end %>
   </div>
   <div class="room-show__form">
+    <div class="message-error">
+      <%= render partial: "/shared/error", locals: { key: :content } %>
+    </div>
     <%= form_with(model: [@room, @message], class: "message_form", local: true, id: "new_message", method: :post) do |f| %>
       <%= f.text_area :content, class: "message_input"%>
       <div class="message_send">
-        <label for="message-submit">
+        <label for="message-send">
           <i class="fas fa-paper-plane"></i>
-          <%= f.submit class: "message_send__btn", id: "message-submit" %>
+          <%= f.submit class: "message_send__btn", id: "message-send" %>
         </label>
       </div>
     <% end %>

@@ -1,11 +1,14 @@
 // 全体
 .room-show__wrapper{
   padding-top: 80px;
+  height: 100vh;
 }
 
 // ルームのヘッダー部分
 .room-show__header{
-  position: relative;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
   img{
     height: 90px;
     width: 100%;
@@ -29,8 +32,8 @@
 // メッセージ一覧部分
 .room-show__main{
   margin-top: 10px;
-  height: 100vh;
-  overflow: scroll;
+  height: calc(100vh - 190px);
+  overflow: auto;
 }
 
 // 相手のメッセージ
@@ -126,8 +129,8 @@
   padding: 30px;
   width: 100%;
   background-color: #fff;
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
   .message_input{
     background-color: #efefef;
     border: 1px solid #efefef;

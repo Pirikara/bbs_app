@@ -111,6 +111,20 @@ header {
   }
 }
 
+//フラッシュメッセージ
+.notifications {
+  color: #ffffff;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: red;
+  }
+}
+
 .menu {
   position: absolute;
   right: 0;
