@@ -31,7 +31,7 @@
 
 // メッセージ一覧部分
 .room-show__main{
-  margin-top: 10px;
+  padding-top: 100px;
   height: calc(100vh - 190px);
   overflow: auto;
 }
@@ -45,11 +45,11 @@
     width: 100%;
     text-align: left;
     &__says{
+      width: 85% !important;
       display: inline-block;
       position: relative;
       margin: 0 0 0 50px;
       padding: 10px;
-      max-width: 250px;
       border-radius: 12px;
       background: #edf1ee;
       &:after{
