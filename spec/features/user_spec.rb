@@ -19,7 +19,7 @@ feature 'user', type: :feature do
       fill_in 'user[password]', with: '1a1a1a'
       fill_in 'user[password_confirmation]', with: '1a1a1a' 
       find('.send-btn').click
-    }.to change(User, :count).by(1)
+    }.to change(User, :count).by(2)
   end
 
   scenario 'ユーザー編集機能の統合テスト' do
