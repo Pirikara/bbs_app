@@ -9,7 +9,7 @@ jobs:
     - image: circleci/mysql:5.7
       environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-        - MYSQL_ROOT_HOST: '%'
+        - MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/bbs_app
 
@@ -41,8 +41,8 @@ jobs:
     - run:
         name: Databasesetup
         command: |
-          bin/rails db:create
-          bin/rails db:schema:load --trace
+          bundle exec rake db:create
+          bundle exec rake db:schema:load
 
     # run tests!
     - run:
