@@ -21,6 +21,18 @@ class Room < ApplicationRecord
     Room.eager_load(:messages).where('content LIKE(?)', "%#{search}%")
   end
 
+  # gest_room
+  # 自分がホストでないトークルーム一覧を取得
+  def self.gest_room(messages, userid)
+    room_ids = []
+    messages.each do |message|
+      room_ids << message.room_id
+    end
+
+    r_ids = room_ids.uniq
+    Room.where(id: r_ids).where.not(host_id: userid)
+  end
+
   # pickupmenu
   # まずはここから
   def self.beginner
