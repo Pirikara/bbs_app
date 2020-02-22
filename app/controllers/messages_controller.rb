@@ -4,8 +4,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = @room.messages.new(message_params)
+    @my_id = current_user.id
+    gon.myid = @my_id
     if @message.save
-      redirect_to room_path(@room.id)
+      respond_to do |format|
+        format.html { redirect_to room_path(@room.id) }
+        format.json
+      end
     else
       @messages = @room.messages.includes(:user)
       @errors = @message.errors.keys.map { |key|[key, @message.errors.full_messages_for(key)]}.to_h

@@ -33,6 +33,7 @@ class RoomsController < ApplicationController
     @message = Message.new
     #@roomにひもづくメッセージとそのユーザーを取得
     @messages = @room.messages.includes(:user)
+    gon.my_id = current_user.id
   end
 
   def edit
