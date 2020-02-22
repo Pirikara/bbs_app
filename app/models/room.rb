@@ -33,6 +33,15 @@ class Room < ApplicationRecord
     Room.where(id: r_ids).where.not(host_id: userid)
   end
 
+  # タイトルが更新されたかどうか判定するメソッド
+  def title_updated?
+    if self.saved_change_to_title?
+      return true
+    else
+      return false
+    end
+  end
+
   # pickupmenu
   # まずはここから
   def self.beginner

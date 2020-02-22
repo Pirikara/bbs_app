@@ -41,7 +41,9 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_update_params)
-      Message.create(room_id: @room.id, user_id: current_user.id, content: "＊自動投稿＊ タイトルを「#{@room.title}」に編集しました")
+      if @room.title_updated?
+        Message.create(room_id: @room.id, user_id: current_user.id, content: "＊自動投稿＊ タイトルを「#{@room.title}」に編集しました")
+      end
       redirect_to room_path(@room.id)
     else
       render :edit
