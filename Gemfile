@@ -77,6 +77,7 @@ gem 'devise'
 
 # JQueryの導入
 gem 'jquery-rails'
+gem 'gon'
 
 # エラーメッセージの日本語対応
 gem 'rails-i18n'
