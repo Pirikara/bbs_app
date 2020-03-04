@@ -30,7 +30,7 @@ feature 'user', type: :feature do
     expect(current_path).to eq root_path
 
     click_link('MYPAGE')
-    expect(current_path).to eq user_path(9)
+    expect(current_path).to eq user_path(15)
     click_link('EDIT ACCOUNT')
     expect(current_path).to eq edit_user_registration_path
     fill_in 'user[name]', with: 'AIUEO'

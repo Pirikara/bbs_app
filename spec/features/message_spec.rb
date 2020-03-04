@@ -19,7 +19,7 @@ feature 'message', type: :feature do
     fill_in 'room[description]', with: "テストです"
     check 'アニメ・漫画'
     find('.send-btn').click
-    expect(current_path).to eq room_path(id: 1)
+    expect(current_path).to eq room_path(id: 8)
 
     expect {
       fill_in 'message[content]', with: "テスト投稿"
