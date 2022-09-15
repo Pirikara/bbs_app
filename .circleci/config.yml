@@ -1,15 +1,19 @@
 version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.4.0
+
 jobs:
   build:
     docker:
     - image: circleci/ruby:2.7-node
       environment:
-        - BUNDLER_VERSION: 2.0.2
-        - RAILS_ENV: 'test'
+        BUNDLER_VERSION: 2.0.2
+        RAILS_ENV: 'test'
     - image: circleci/mysql:5.7
       environment:
-        - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-        - MYSQL_ROOT_HOST: '127.0.0.1'
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+        MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/bbs_app
 
