@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '6.0.3.6'
 # Use mysql as the database for Active Record
 # 本番環境ではPostgresqlを使用
-gem 'mysql2', '>= 0.4.4', '< 0.6.0', groups: %w(test development), require: false
-gem 'pg', '~> 0.19.0', group: :production, require: false
+gem 'mysql2', groups: %w(test development), require: false
+gem 'pg', group: :production
 
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
